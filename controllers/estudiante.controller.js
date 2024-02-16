@@ -1,9 +1,8 @@
 
 const { response } = require('express');
+const Estudiante = require('../models/estudiante');
 
 const bcryptjs = require('bcryptjs');
-
-const Estudiante = require('../models/estudiante');
 
 const estudiantesGet = async (req, res = response) => {
     const { limite, desde } = req.query;
@@ -19,6 +18,16 @@ const estudiantesGet = async (req, res = response) => {
     });
 }
 
+const estudiantesPost = async (req, res) => {
+    const { nombre, apellido, curso, correo, pasword } = req.body;
+    const estudiante = new Estudiante({ nombre, apellido, curso, correo, pasword });
+    await estudiante.save();
+    res.status(200).json({
+        estudiante
+    });
+}
+
 module.exports = {
-    estudiantesGet
+    estudiantesGet,
+    estudiantesPost
 }
