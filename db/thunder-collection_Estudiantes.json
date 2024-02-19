@@ -1,0 +1,41 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Estudiantes",
+    "dateExported": "2024-02-09T17:52:21.160Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "42a56dd2-6637-48c8-8b39-8a3d3b9461c5",
+            "colId": "d134b1b3-5887-4860-9d57-72ea558c5f71",
+            "containerId": "",
+            "name": "estudiantesPost",
+            "url": "http://localhost:3000/api/estudiantes",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-02-09T16:31:32.500Z",
+            "modified": "2024-02-09T16:45:23.188Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "231e077f-1415-41f7-8d81-7ccbac113384",
+            "colId": "d134b1b3-5887-4860-9d57-72ea558c5f71",
+            "containerId": "",
+            "name": "estudiantesGet",
+            "url": "http://localhost:3000/api/estudiantes",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-02-09T16:07:56.841Z",
+            "modified": "2024-02-09T16:08:22.481Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

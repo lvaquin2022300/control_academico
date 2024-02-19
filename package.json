@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "control_academico",
   "version": "1.0.0",
   "description": "",
@@ -8,10 +9,22 @@
   },
   "keywords": [],
   "author": "lmaquin",
+=======
+  "name": "api_controlacademico",
+  "version": "1.0.0",
+  "description": "Creacion de control academico",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Vaquin",
+>>>>>>> c52acb709b3eb06013654527bb25226375bc38c3
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
@@ -19,3 +32,11 @@
     "mongoose": "^8.1.2"
   }
 }
+=======
+    "dotenv": "^16.4.2",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.1.2"
+  }
+} 
+>>>>>>> c52acb709b3eb06013654527bb25226375bc38c3

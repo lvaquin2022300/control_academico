@@ -1,4 +1,5 @@
 const { validationResult } = require('express-validator');
+<<<<<<< HEAD
 const mongoose = require('mongoose');
 const Usuario = require('../models/usuario')
 
@@ -42,4 +43,17 @@ const validarRolTeacher = async (req, res, next) => {
 module.exports = {
     validarCampos,
     validarRolTeacher
+=======
+
+const validarCampos = (req, res, next) => {
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+        return res.status(400).json(error);
+    }
+    next();
+}
+
+module.exports = {
+    validarCampos
+>>>>>>> c52acb709b3eb06013654527bb25226375bc38c3
 }
