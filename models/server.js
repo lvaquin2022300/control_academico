@@ -5,7 +5,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.estudiantesPath = '/api/estudiantes';
+        this.estudiantesPath = '/api/estudiantes'
         this.conectarDB();
         this.middlewares();//loos middlewares, permite validar si cumple los requisitos antes de enviarla al controlador
         this.routes();

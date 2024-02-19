@@ -19,7 +19,6 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Messi\",\n  \"Apellido\":\"Vaquin\",\n  \"curso\": \" Lengua\",\n  \"correo\":\"lvaquin@kinal\",\n  \"pasword\":\"123\"\n}",
                 "form": []
             },
             "tests": []

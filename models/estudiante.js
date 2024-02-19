@@ -21,11 +21,7 @@ const estudianteSchema = Schema({
         type: String,
         required: [true, 'La clave es obligatoria']
     },
-    role: {
-        type: String,
-        required: true,
-        enum: ["STUDENT_ROLE"]
-    }
+
 });
 
 module.exports = model('Estudiante', estudianteSchema);

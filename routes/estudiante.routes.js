@@ -14,7 +14,8 @@ router.post(
     check("apellido", "El apellido es obligatorio").not().isEmpty(),
     check("curso", "El curso es obligatorio").not().isEmpty(),
     check("correo", "El correo es obligatorio").not().isEmpty(),
-    check("Password", "La contrasena es obligatorio").not().isEmpty(),
+    check("pasword", "El correo es obligatorio").not().isEmpty(),
+
     validarCampos
 ], estudiantesPost);
 
