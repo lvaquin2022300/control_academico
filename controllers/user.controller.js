@@ -65,38 +65,38 @@ const usuariosPost = async (req, res) => {
 const usuariosLogin = async (req, res) => {
     const { correo, password } = req.body;
 
-    try{
+    try {
         const usuario = await Usuario.findOne({ correo });
 
-    if (!usuario) {
-        return res.status(400).json({
-            msg: 'Usuario no encontrado'
+        if (!usuario) {
+            return res.status(400).json({
+                msg: 'Usuario no encontrado'
+            });
+        }
+
+        if (!usuario.estado) {
+            return res.status(400).json({
+                msg: 'Usuario borrado de la base de datos'
+            })
+        }
+
+        const passwordValido = bcryptjs.compareSync(password, usuario.password);
+
+        if (!passwordValido) {
+            return res.status(400).json({
+                msg: 'Contraseña incorrecta'
+            });
+        }
+
+        const token = await generarJWT(usuario.id)
+
+        res.status(200).json({
+            msg_1: 'Inicio de sesión exitoso',
+            msg_2: 'Bienvenido ' + usuario.nombre,
+            msg_3: 'Este su token =>' + token,
         });
-    }
 
-    if(!usuario.estado){
-        return res.status(400).json({
-            msg: 'Usuario borrado de la base de datos'
-        })
-    }
-
-    const passwordValido = bcryptjs.compareSync(password, usuario.password);
-
-    if (!passwordValido) {
-        return res.status(400).json({
-            msg: 'Contraseña incorrecta'
-        });
-    }
-
-    const token = await generarJWT(usuario.id)
-
-    res.status(200).json({
-        msg_1: 'Inicio de sesión exitoso',
-        msg_2: 'Bienvenido '+ usuario.nombre,
-        msg_3: 'Este su token =>'+ token,
-    });
-
-    }catch(e){
+    } catch (e) {
         console.log(e);
         res.status(500).json({
             msg: 'Error inesperado'
