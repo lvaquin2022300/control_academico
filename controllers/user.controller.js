@@ -1,10 +1,11 @@
+
 //Agregar modulos necesarios para el controlador de usuario
-
-const { response, json } = require('express');
-const bcryptjs = require('bcryptjs');
-const Usuario = require('../models/usuario');
 const { generarJWT } = require("../helpers/generar-jwt");
+const { response, json } = require('express');
+const Usuario = require('../models/usuario');
+const bcryptjs = require('bcryptjs');
 
+//Crear metodos para EndPoints
 const usuariosGet = async (req, res = response) => {
     const { limite, desde } = req.query;
     const query = { estado: true };
