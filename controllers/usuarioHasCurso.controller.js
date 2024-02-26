@@ -61,7 +61,6 @@ const usuarioHasCursoPost = async (req, res) => {
     const { correo, materia } = req.body;
 
     const Estudiante = await Usuario.findOne({ correo });
-    const estudiante = Estudiante.id;
 
     const Cursoo = await Curso.findOne({ nombre: materia });
 

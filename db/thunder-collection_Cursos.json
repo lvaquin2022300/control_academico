@@ -33,7 +33,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Quimica\",\n  \"categoria\":\"ciencias\",\n  \"maestro\":\"maestro@email.com\"\n}",
+                "raw": "{\n  \"nombre\":\"Matematicas\",\n  \"categoria\":\"ciencias\",\n  \"maestro\":\"maestro@email.com\"\n}",
                 "form": []
             },
             "tests": []
