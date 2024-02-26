@@ -1,3 +1,5 @@
+//Agregar modulos necesarios para el controlador de usuario
+
 const { response, json } = require('express');
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
