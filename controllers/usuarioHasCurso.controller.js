@@ -1,5 +1,4 @@
 //Agregar modulo requeridos en controller UsuarioHasCurso
-
 const { response, json } = require('express');
 const usuarioHasCurso = require('../models/usuarioHasCurso');
 const Usuario = require('../models/usuario');
