@@ -1,3 +1,5 @@
+//Agregar modulo requeridos en controller UsuarioHasCurso
+
 const { response, json } = require('express');
 const usuarioHasCurso = require('../models/usuarioHasCurso');
 const Usuario = require('../models/usuario');
@@ -29,7 +31,7 @@ const getUsuarioHasCursoByid = async (req, res) => {
         const cursosInscritos = await usuarioHasCurso.find({ estudiante: estudiante.id, estado: true }).populate('curso');
 
         if (cursosInscritos.length === 0) {
-            return res.status(400).json({ msg: 'El estudiante no está inscrito en ningún curso' });
+            return res.status(400).json({ msg: 'Asigna a un estudiante a un curso primera' });
         }
 
         const listaCursos = cursosInscritos.map(curso => ({
@@ -37,13 +39,13 @@ const getUsuarioHasCursoByid = async (req, res) => {
             fecha_inscripcion: curso.fecha_inscripcion
         }));
 
-        res.status(200).json({ 
-            cursos: listaCursos 
+        res.status(200).json({
+            cursos: listaCursos
         });
 
     } catch (error) {
         console.error(error);
-        res.status(500).json({ msg: 'Error interno del servidor' });
+        res.status(500).json({ msg: 'Error al intentar levantar el server' });
     }
 
 }
@@ -64,13 +66,13 @@ const usuarioHasCursoPost = async (req, res) => {
 
     const Cursoo = await Curso.findOne({ nombre: materia });
 
-    if(!Cursoo){
+    if (!Cursoo) {
         return res.status(400).json({
             msg:
                 'El curso que se quiere asignar no existe'
         });
     }
-    
+
     const curso = Cursoo.id;
 
 
