@@ -1,4 +1,4 @@
-
+//Agregar modulos que se utilizara en el controlador de cursos
 
 const { response, json } = require('express');
 const Curso = require('../models/curso');
